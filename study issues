@@ -8,3 +8,24 @@ common library
 크로스 커팅
 msa main concern
 app arch pattern
+-	Monolithic Arch
+	상황: server side 엔터프라이즈 앺을 만들고 있을 때 여러 client들을 지원할 수 있어야함 써드파티를 위해 api로 노출 시킬 수도 잇음.
+	문제: 앺의 배포 아키텍쳐가 모냐
+	솔루션: 모놀리띡으로 앺을 설계한다 (EX 하나의 자바 와르파일, Rails or NodeJS 코드)
+	개발, 배포, 스케일링 하기에 용이함
+	앺의 규모가 커지거나 팀의 규모가 커지면 이 방법이 좋지 않음
+	ide느려짐, 
+
+3 dimensions of scaling
+-	x 축 horizontal duplication scale by cloning 앺의 여러 개의 copy를 돌리는거
+-	y 축 functional decomposition scale by splitting different things 앺을 서로 다른 서비스를 단위로 쪼개는거
+-	z 축 data partitioning scale by splitting similar things
+-	
+
+-	Microservice Arch
+	솔루션: 앺을 loosely coupled collaborating 서비스들의 집합으로 정의한다
+	유지하기 쉽고 테스트 하기도 쉬움, 빈번하고 빠른 개발 및 배포가 ㄱㄴ
+	다른 서비스와 loosely coupled- 팀이 본인 서비스에만 집중하고 변화에 영향 안받을 수 잇게 해줌
+	독립적으로 배포가 가능- 다른 팀과 협업 없이 배포가 가능하다
+	작은 팀에 의해서 개발이 가능하다 – 높은 생산성을 위해서 필수적임
+	
